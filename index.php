@@ -27,11 +27,11 @@
 
     <?php if(isLoggedIn()): ?>
         You are Logged In! <a href="./logout.php">Logout<br></a>
+        <p><a href="./new-article.php">New Article</a></p>
     <?php else: ?>
         You are Logged Out! <a href="./login.php">Login<br></a>
     <?php endif; ?>    
 
-    <a href="./new-article.php">New Article</a>
     <?php if (empty($articles)) : ?>
         <h2> No articles found! </h2>
     <?php else: ?>    
