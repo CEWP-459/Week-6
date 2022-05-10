@@ -25,7 +25,7 @@
     <h1>Blog</h1>
 
     <?php if (isset($_SESSION['is_logged_in']) && $_SESSION['is_logged_in']): ?>
-        You are Logged In! <a href="./logout.php">Logout</a>
+        You are Logged In! <a href="./logout.php">Logout<br></a>
     <?php else: ?>
         You are Logged Out! <a href="./login.php">Login<br></a>
     <?php endif; ?>    

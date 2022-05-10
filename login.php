@@ -6,11 +6,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($_POST['username'] == 'ksharma' && $_POST['password'] == 'secret') {
 
-       die('Login Success!');
+        $_SESSION['is_logged_in'] = true;
+
+        header("Location: /");
 
     } else {
 
-        die('Login Failed!');
+        $error = "login incorrect";
 
     }
 }
@@ -19,6 +21,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <?php require 'includes/header.php'; ?>
 
 <h2>Login</h2>
+
+<?php if (! empty($error)) : ?>
+    <p><?= $error ?></p>
+<?php endif; ?>
 
 <form method="post">
 
