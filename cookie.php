@@ -3,9 +3,13 @@
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     setcookie('example', 'hello', time() + 2 * 24 * 60 * 60);
-    echo 'Cookie Set';
+    echo "Cookie Set <br>";
     
-    var_dump($_COOKIE);
+    var_dump($_COOKIE); echo " Before <br>";
+
+    unset($_COOKIE['example']);
+
+    var_dump($_COOKIE); echo " After <br>";
 
 }
 
