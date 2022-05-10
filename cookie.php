@@ -1,7 +1,27 @@
 <?php
 
-setcookie('subdir_example', 'hello');
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
-echo 'Subdirectory cookie set.';
+    setcookie('example', 'hello');
+    echo 'Cookie set.';
+    
+    var_dump($_COOKIE);
 
-var_dump($_COOKIE);
+}
+
+
+?>
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Cookie Example</title>
+    </head>
+    <body>
+        <h1> Cookie Example </h1>
+        <form method="post">
+            <button>Set Cookie</button>
+        </form>    
+    </body>
+</html>
