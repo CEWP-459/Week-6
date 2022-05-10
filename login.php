@@ -2,15 +2,25 @@
 
 session_start();
 
-$_SESSION['is_logged_in'] = true;
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+    if ($_POST['username'] == 'ksharma' && $_POST['password'] == 'secret') {
+
+       die('Login Success!');
+
+    } else {
+
+        die('Login Failed!');
+
+    }
+}
 
 ?>
-
 <?php require 'includes/header.php'; ?>
 
 <h2>Login</h2>
 
-<form>
+<form method="post">
 
     <div>
         <label for="username">Username</label>
