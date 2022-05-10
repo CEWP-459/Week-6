@@ -1,5 +1,7 @@
 <?php
 
+    session_start();
+
     ini_set('display_errors', 1); 
     require 'includes/database-connection.php'; 
 
@@ -21,6 +23,7 @@
 <?php require 'includes/header.php'; ?>
 <body>
     <h1>Blog</h1>
+    <h3><?php var_dump($_SESSION['is_logged_in']) ?></h3>
     <a href="./new-article.php">New Article</a>
     <?php if (empty($articles)) : ?>
         <h2> No articles found! </h2>
