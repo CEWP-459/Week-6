@@ -23,7 +23,13 @@
 <?php require 'includes/header.php'; ?>
 <body>
     <h1>Blog</h1>
-    <h3><?php var_dump($_SESSION['is_logged_in']) ?></h3>
+
+    <?php if (isset($_SESSION['is_logged_in']) && $_SESSION['is_logged_in']): ?>
+        You are Logged In! <a href="./logout.php">Logout</a>
+    <?php else: ?>
+        You are Logged Out! <a href="./login.php">Login<br></a>
+    <?php endif; ?>    
+
     <a href="./new-article.php">New Article</a>
     <?php if (empty($articles)) : ?>
         <h2> No articles found! </h2>
