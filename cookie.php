@@ -1,15 +1,15 @@
 <?php
 
+setcookie('example', 'hello', time() + 2 * 24 * 60 * 60);
+echo "Cookie Set <br>";
+
+var_dump($_COOKIE); echo " Before <br>";
+
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
-    setcookie('example', 'hello', time() + 2 * 24 * 60 * 60);
-    echo "Cookie Set <br>";
-    
-    var_dump($_COOKIE); echo " Before <br>";
+    // unset($_COOKIE['example']);
 
-    unset($_COOKIE['example']);
-
-    var_dump($_COOKIE); echo " After <br>";
+    setcookie('example', 'hello', time() - 3600);
 
 }
 
@@ -25,7 +25,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <body>
         <h1> Cookie Example </h1>
         <form method="post">
-            <button>Set Cookie</button>
+            <button>Delete Cookie</button>
         </form>    
     </body>
 </html>
