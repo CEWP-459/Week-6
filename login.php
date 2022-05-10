@@ -6,6 +6,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($_POST['username'] == 'ksharma' && $_POST['password'] == 'secret') {
 
+        session_regenerate_id(true);
+
         $_SESSION['is_logged_in'] = true;
 
         header("Location: /");
