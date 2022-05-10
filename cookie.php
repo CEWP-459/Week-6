@@ -2,7 +2,7 @@
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
-    setcookie('example', 'hello');
+    setcookie('example', 'hello', time() + 2 * 24 * 60 * 60);
     echo 'Cookie set.';
     
     var_dump($_COOKIE);
