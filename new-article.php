@@ -3,6 +3,13 @@
 ini_set('display_errors', 1); 
 require 'includes/database-connection.php'; 
 require 'includes/article.php'; 
+require 'includes/auth.php'; 
+
+session_start();
+
+if (!isLoggedIn()) {
+    die("Unauthorised!");
+}
 
 $title = '';
 $content = '';
